@@ -1,3 +1,9 @@
+@import url(../clear-sans/clear-sans.css);
+
+body {
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
 #grid {
   background: #bbada0;
   border-radius: 6px;
@@ -32,6 +38,7 @@
 
 .tile {
   color: #f9f6f2;
+  font-weight: bold;
   width: 107px;
   height: 107px;
   margin-left: 15px;
@@ -44,7 +51,7 @@
 
 .tile-text {
   display: inline-block;
-  margin: 26px auto;
+  margin: 13px auto;
 }
 
 .tile.tile-2 {
@@ -71,30 +78,30 @@
   font-size: 45px;
   background: #edcf72;
 }.tile.tile-128 .tile-text {
-  margin: 31px auto;
+  margin: 23.5px auto;
 }.tile.tile-256 {
   font-size: 45px;
   background: #edcc61;
 }.tile.tile-256 .tile-text {
-  margin: 31px auto;
+  margin: 23.5px auto;
 }.tile.tile-512 {
   font-size: 45px;
   background: #edc850;
 }.tile.tile-512 .tile-text {
-  margin: 31px auto;
+  margin: 23.5px auto;
 }.tile.tile-1024 {
   font-size: 35px;
   background: #edc53f;
 }.tile.tile-1024 .tile-text {
-  margin: 36px auto;
+  margin: 28px auto;
 }.tile.tile-2048 {
   font-size: 35px;
   background: #edc22e;
 }.tile.tile-2048 .tile-text {
-  margin: 36px auto;
+  margin: 28px auto;
 }.tile.tile-super {
   font-size: 30px;
   background: #3c3a32;
 }.tile.tile-super .tile-text {
-  margin: 38.5px auto;
+  margin: 31.5px auto;
 }
