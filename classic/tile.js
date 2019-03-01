@@ -1,8 +1,12 @@
-function Tile(value, grid, x, y) {
+function Tile(value, grid, x, y, div) {
   this.value = value;
   this.updateGrid(grid);
   this.x = x;
   this.y = y;
+  
+  //this is where (if a div is given) it sets it to its own, so in the .moveTo 
+  //function this.div.style can be set.
+  this.div = div;
 }
 
 Tile.prototype.updateGrid = function(grid) {
@@ -14,10 +18,12 @@ Tile.prototype.neighbors = function() {
   var tiles = this.grid.tiles;
   var i = this.x;
   var j = this.y;
+
   return [tiles[i][j-1],
-          tiles[i-1][j],
+          tiles[i-1] ? tiles[i-1][j] : false,
           tiles[i][j+1],
-          tiles[i+1][j]];
+          tiles[i+1] ? tiles[i+1][j] : false
+  ]
 }
 
 Tile.prototype.createElement = function() {
