@@ -1,8 +1,10 @@
-function Tile(value, grid, x, y) {
+function Tile(value, grid, x, y, div) {
   this.value = value;
   this.updateGrid(grid);
   this.x = x;
   this.y = y;
+
+  this.div = div;
 }
 
 Tile.prototype.updateGrid = function(grid) {
@@ -15,9 +17,9 @@ Tile.prototype.neighbors = function() {
   var i = this.x;
   var j = this.y;
   return [tiles[i][j-1],
-          tiles[i-1][j],
+          tiles[i-1] ? tiles[i-1][j] : false,
           tiles[i][j+1],
-          tiles[i+1][j]];
+          tiles[i+1] ? tiles[i+1][j] : false];
 }
 
 Tile.prototype.createElement = function() {

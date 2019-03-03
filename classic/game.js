@@ -60,13 +60,20 @@ Game.prototype.move = function(dir) {
       }
 
       var tile = this.grid.tiles[i][j];
-      if (condition) {
-        if (tile) {
-          if (!tile.neighbors()[dir]) {
-            newGrid.addTile(tile.value, nI, nJ);
+      if (tile) {
+        if (condition) {
+          // var neighbor = tile.neighbors()[dir];
+          var neighbor = newGrid.tiles[nI][nJ];
+          if (!neighbor) {
+            //newGrid.addTile(tile.value, nI, nJ, tile.div);
+
+            newGrid.tiles[nI][nJ] = tile;
             tile.updateGrid(newGrid);
             tile.moveTo(nI, nJ);
           }
+        } else {
+          newGrid.tiles[i][j] = tile;
+          tile.updateGrid(newGrid);
         }
       }
     }

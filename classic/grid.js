@@ -27,8 +27,8 @@ Grid.prototype.reset = function() {
   this.tiles = create2DArray(this.width, this.height);
 }
 
-Grid.prototype.addTile = function(value, x, y) {
-  this.tiles[x][y] = new Tile(value, this, x, y);
+Grid.prototype.addTile = function(value, x, y, div) {
+  this.tiles[x][y] = new Tile(value, this, x, y, div);
 }
 
 Grid.prototype.createElement = function() {
